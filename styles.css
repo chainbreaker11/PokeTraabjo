@@ -10,6 +10,7 @@ body {
   font-size: 2rem; 
   text-align: center; 
   margin-bottom: 20px; 
+  color: yellow;
 }
 
 .navbar {
@@ -32,6 +33,21 @@ body {
 .navbar .navbar-nav {
   margin-left: auto;
 }
+
+#add.btn-primary {
+  background-color: #f809ec; 
+  border-color: #f809ec; 
+}
+
+#send.btn-success {
+  background-color: #4c00ff; 
+  border-color: #4c00ff; 
+}
+#reset.btn-danger {
+  background-color: #7AC74C; 
+  border-color: #7AC74C; 
+}
+
 
 #pokemonContainer {
   display: flex;
