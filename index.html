@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poketomonsta</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <div class="container">
+            <img src="pokelogo.png" alt="">
+            <div class="row mb-4">
+                <div class="col">
+                    <input type="text" id="name" class="form-control" placeholder="Nombre del Pokémon">
+                </div>
+                <div class="col-auto">
+                    <button type="button" id="add" class="btn btn-primary">Agregar</button>
+                </div>
+                <div class="col-auto">
+                    <button type="button" id="send" class="btn btn-success">Enviar</button>
+                </div>
+                <div class="col-auto">
+                    <button type="button" id="reset" class="btn btn-danger">Empezar de nuevo</button>
+                </div>
+                <div class="col-auto">
+                    <button type="button" id="showHistory" class="btn btn-info">Mostrar historial de equipos</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-main">
+        <div class="row mb-4">
+            <div class="col">
+                <h1 class="header">Poketomonsta</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div id="pokemonContainer"></div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <div id="historyContainer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>    
+    <script src="script.js"></script>
+</body>
+</html>
