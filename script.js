@@ -1,6 +1,6 @@
 const pokemonArray = [];//arreglo para el equipo pokemon 
 
-const teamHistory = [];// Arreglo para el historial de equipos
+const teamHistory = [];// arreglo para el historial de equipos
 
 document.getElementById('add').addEventListener('click', async function () {
     if (pokemonArray.length >= 3) {
@@ -52,7 +52,8 @@ async function getPokemon(name) {
 async function displayAllPokemon() {
     const pokemonContainer = document.getElementById('pokemonContainer');
     pokemonContainer.innerHTML = '';
-
+     // mostrar los pokemon por su experiencia
+    pokemonArray.sort((a, b) => a.base_experience - b.base_experience);
     pokemonArray.forEach(pokemon => {
         const pokemonDiv = document.createElement('div');
         pokemonDiv.classList.add('pokemon-card')
@@ -78,7 +79,11 @@ async function displayAllPokemon() {
 }
 
 document.getElementById('send').addEventListener('click', function () {
-    displayAllPokemon();
+    if (pokemonArray.length > 0) { // Verificar si un pokeon minimo para poder enviar el pokemon al arreglo 
+        displayAllPokemon();
+    } else {
+        alert("Por favor, agrega al menos un Pokémon antes de enviar.");
+    }
 });
 
 function clearInput() {
@@ -97,15 +102,15 @@ function enableSearchAndAddButton() {
 }
 
 
-// Función para reiniciar el arreglo de Pokémon del equipo actual
+// Funcion para reiniciar el arreglo de pokemon del equipo actual
 function resetPokemonArray() {
     pokemonArray.length = 0;
     const pokemonContainer = document.getElementById('pokemonContainer');
     pokemonContainer.innerHTML = '';
-    enableSearchAndAddButton(); // Habilitar la barra de búsqueda y el botón de agregar
+    enableSearchAndAddButton(); // desbloquear la barra de búsqueda y el botón de agregar
 }
 
-let teamHistoryVisible = false; // Variable de estado para controlar la visibilidad del historial de equipos
+let teamHistoryVisible = false; // variable de estado para controlar la visibilidad del historial de equipos
 
 function showTeamHistory() {
     const historyContainer = document.getElementById('historyContainer');
@@ -116,7 +121,7 @@ function showTeamHistory() {
         return;
     }
 
-    // Si el historial de equipos no está visible, lo mostramos
+    // mostrar el historial de equipos
     historyContainer.innerHTML = '';
     teamHistory.forEach((team, teamIndex) => {
         const teamDiv = document.createElement('div');
