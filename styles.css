@@ -47,7 +47,18 @@ body {
   background-color: #7AC74C; 
   border-color: #7AC74C; 
 }
-
+#showHistory.btn-info {
+  background-color: #ffff00; 
+  border-color: #ffff00; 
+}
+#add.btn.btn-primary{
+  color: #000;
+}
+#send.btn.btn-success{
+  color: #000;
+}#reset.btn.btn-danger{
+  color: #000;
+}
 
 #pokemonContainer {
   display: flex;
